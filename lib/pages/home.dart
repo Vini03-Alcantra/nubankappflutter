@@ -3,6 +3,7 @@ import 'package:nubankappflutter/widgets/card_app.dart';
 import 'package:nubankappflutter/widgets/my_app_bar.dart';
 import 'package:nubankappflutter/widgets/my_dots_app.dart';
 import 'package:nubankappflutter/widgets/page_view_app.dart';
+import 'package:nubankappflutter/widgets/menu_app.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -40,8 +41,11 @@ class _HomePageState extends State<HomePage> {
               });
             },
           ),
-          PageViewApp(
-            //top: !_showMenu ? _screenHeight * 0.24 : _screenHeight * 0.85,
+          MenuApp(
+            top: _screenHeight * .20,
+            showMenu: _showMenu,
+          ),
+          PageViewApp(          
             showMenu: _showMenu,
             top: _yPosition,
             onChanged: (index){
@@ -64,11 +68,11 @@ class _HomePageState extends State<HomePage> {
                 _yPosition = _yPosition > positionBottonLimit ? positionBottonLimit : _yPosition;
                 
                 print("midlePosition $midlePosition");
-                if (_yPosition != positionBottonLimit && details.delta.dy > 0) {        
-                  print("Passour por aqui");
+                if (_yPosition != positionBottonLimit && details.delta.dy > 0) {                          
                   _yPosition = _yPosition > positionTopLimit + midlePosition - 50
                   ? positionBottonLimit 
                   : _yPosition;
+                  print("Checou aqui");
                 }
 
                 if (_yPosition != positionTopLimit && details.delta.dy < 0) {
@@ -85,12 +89,13 @@ class _HomePageState extends State<HomePage> {
               });              
             }
           ),
-        MyDotsApp(
-          top: _screenHeight * 0.78,
-          currentIndex: _currentIndex
-        )
+          MyDotsApp(
+            showMenu: _showMenu,
+            top: _screenHeight * 0.78,
+            currentIndex: _currentIndex
+          )
         ],
       ),
     );
-  }
+  } 
 }
