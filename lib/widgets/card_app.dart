@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 
-class CardApp extends StatefulWidget {
-  @override
-  _CardAppState createState() => _CardAppState();
-}
+class CardApp extends StatelessWidget {
+  final Widget child;
 
-class _CardAppState extends State<CardApp> {
+  const CardApp({Key key, this.child}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20),
       child: Container(
-        decoration: BoxDecoration(
+        child: child,
+        decoration: BoxDecoration(          
           color: Colors.white,
           borderRadius: BorderRadius.circular(5)
         ),        

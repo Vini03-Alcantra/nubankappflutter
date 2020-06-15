@@ -24,7 +24,7 @@ class MenuApp extends StatelessWidget {
               ),
               Text.rich(
                 TextSpan(
-                  text: "Banco",
+                  text: "Banco ",
                   children: [
                     TextSpan(  
                       text: "250 - Nu Pagamentos S.A",
@@ -37,7 +37,7 @@ class MenuApp extends StatelessWidget {
               SizedBox(height: 5),
               Text.rich(
                 TextSpan(
-                  text: "Agência",
+                  text: "Agência ",
                   children: [
                     TextSpan(  
                       text: "0001",
@@ -50,7 +50,7 @@ class MenuApp extends StatelessWidget {
               SizedBox(height: 5),
               Text.rich(
                 TextSpan(
-                  text: "Conta",
+                  text: "Conta ",
                   children: [
                     TextSpan(  
                       text: "000000-0",

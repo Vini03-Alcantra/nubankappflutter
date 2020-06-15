@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nubankappflutter/widgets/bottom_menu.dart';
 import 'package:nubankappflutter/widgets/card_app.dart';
+import 'package:nubankappflutter/widgets/item_menu_bottom.dart';
 import 'package:nubankappflutter/widgets/my_app_bar.dart';
 import 'package:nubankappflutter/widgets/my_dots_app.dart';
 import 'package:nubankappflutter/widgets/page_view_app.dart';
@@ -45,6 +47,7 @@ class _HomePageState extends State<HomePage> {
             top: _screenHeight * .20,
             showMenu: _showMenu,
           ),
+          BottomMenu(showMenu: _showMenu,),
           PageViewApp(          
             showMenu: _showMenu,
             top: _yPosition,
@@ -72,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                   _yPosition = _yPosition > positionTopLimit + midlePosition - 50
                   ? positionBottonLimit 
                   : _yPosition;
-                  print("Checou aqui");
+                  
                 }
 
                 if (_yPosition != positionTopLimit && details.delta.dy < 0) {
@@ -93,7 +96,8 @@ class _HomePageState extends State<HomePage> {
             showMenu: _showMenu,
             top: _screenHeight * 0.78,
             currentIndex: _currentIndex
-          )
+          ),
+                    
         ],
       ),
     );
