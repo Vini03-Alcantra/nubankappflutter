@@ -6,7 +6,7 @@ class FirstCard extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(5),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,        
         children: <Widget>[
           Expanded(
             flex: 3,
@@ -15,6 +15,8 @@ class FirstCard extends StatelessWidget {
                 children: <Widget>[
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Expanded(
                           flex: 3,                          
@@ -68,15 +70,20 @@ class FirstCard extends StatelessWidget {
                                               ), 
                                               Text.rich(
                                                 TextSpan(
-                                                  text: "R\$2.399.50",
-                                                  style: TextStyle(
-                                                    color: Colors.green,
-                                                    fontWeight: FontWeight.bold
-                                                  )
-                                                ),
+                                                  text: "Limite Disponível: ",
+                                                  children: [
+                                                    TextSpan(
+                                                      text: "R\$2.399.50",
+                                                      style: TextStyle(
+                                                        color: Colors.green,
+                                                        fontWeight: FontWeight.bold
+                                                      )
+                                                    ),
+                                                  ]
+                                                ),                                                
                                                 textAlign: TextAlign.start,
                                                 style: TextStyle(
-                                                  color: Colors.grey,
+                                                  color: Colors.black,
                                                   fontSize: 12
                                                 ),
                                               )
@@ -147,7 +154,7 @@ class FirstCard extends StatelessWidget {
                     SizedBox(width: 5),
                     Flexible(
                       child: Text("Compra mais recente no supermercado R\$34.56 quinta feir", 
-                      style: TextStyle(color: Colors.grey, fontSize: 13),
+                      style: TextStyle(color: Colors.black, fontSize: 13),
                       )
                     ),
                     Icon(

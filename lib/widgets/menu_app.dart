@@ -92,7 +92,7 @@ class MenuApp extends StatelessWidget {
                           hoverElevation: 0,
                           splashColor: Colors.purple[900],
                           child: Text("Sair do APP",
-                          style: TextStyle(fontSize: 12),
+                          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                           onPressed: (){},
 
