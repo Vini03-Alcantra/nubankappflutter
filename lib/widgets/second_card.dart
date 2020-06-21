@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
-class SecondCard extends StatelessWidget {
+class SecondCard extends StatefulWidget {
+  @override
+  _SecondCardState createState() => _SecondCardState();
+}
+
+class _SecondCardState extends State<SecondCard> with AutomaticKeepAliveClientMixin {
+  
+  bool _showSaldo = true;
   @override
   Widget build(BuildContext context) {
+    var altura = MediaQuery.of(context).size.height;
+    var largura = MediaQuery.of(context).size.width;
     return ClipRRect(
       borderRadius: BorderRadius.circular(5),
       child: Column(
@@ -44,9 +54,21 @@ class SecondCard extends StatelessWidget {
                                         ), 
                                       ],
                                     ),
-                                    Icon(
-                                      Icons.remove_red_eye,
-                                      color: Colors.grey
+                                    GestureDetector(
+                                      onTap: (){
+                                        setState(() {
+                                          _showSaldo = !_showSaldo;
+                                        });                                        
+                                      },
+                                      child: _showSaldo ?
+                                      Icon(                                        
+                                        MaterialCommunityIcons.eye_outline,
+                                        color: Colors.grey
+                                      ) :
+                                      Icon(                                        
+                                        MaterialCommunityIcons.eye_off,
+                                        color: Colors.grey
+                                      )  
                                     )
                                     ],
                                   ),
@@ -61,6 +83,7 @@ class SecondCard extends StatelessWidget {
                                         Text("Saldo Disponível", textAlign: TextAlign.start, 
                                         style: TextStyle(color: Colors.grey, fontSize: 13),
                                         ),
+                                        _showSaldo ?
                                         Text.rich(
                                           TextSpan(
                                             text: "R\$ 2.600,00"
@@ -70,7 +93,14 @@ class SecondCard extends StatelessWidget {
                                             color: Colors.black,
                                             fontSize: 28,                                                    
                                           ),
-                                        ),                                         
+                                        ) :
+                                        Container(
+                                          height: altura * 0.05,
+                                          width: largura * 0.6,
+                                          decoration: BoxDecoration(
+                                            color: Colors.grey[400]
+                                          ),
+                                        )
                                       ],
                                     ),
                                   ),
@@ -119,4 +149,8 @@ class SecondCard extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }
