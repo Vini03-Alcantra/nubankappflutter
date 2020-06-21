@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nubankappflutter/widgets/card_app.dart';
 import 'package:nubankappflutter/widgets/first_card.dart';
 import 'package:nubankappflutter/widgets/second_card.dart';
+import 'package:nubankappflutter/widgets/third_card.dart';
 
 class PageViewApp extends StatelessWidget {
   final double top;
@@ -26,7 +27,7 @@ class PageViewApp extends StatelessWidget {
           children: <Widget>[
             CardApp(child: FirstCard()),
             CardApp(child: SecondCard(),),
-            CardApp()
+            CardApp(child: ThirdCard(),)
           ],
         ),
       )
