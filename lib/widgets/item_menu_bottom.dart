@@ -5,29 +5,33 @@ class ItemMenuBottom extends StatelessWidget {
   final IconData icon;
 
   ItemMenuBottom(this.icon, this.text);
+  
   @override
   Widget build(BuildContext context) {
+    var largura = MediaQuery.of(context).size.width;
+    var altura = MediaQuery.of(context).size.height;
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 12),
       child: Container(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(8.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Icon(icon),
+              Icon(icon, size: 22),
               Text(
                 text,
-                style: TextStyle(fontSize: 10),
+                style: TextStyle(fontSize: 15),
               )
             ],
           ),
         ),
-        width: MediaQuery.of(context).size.width * 0.25,
+        width:  largura * 0.25,
+        height: altura * 0.08,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
-          color: Colors.white24
+          color: Colors.deepPurple[400]
         ),
       ),                  
     );
