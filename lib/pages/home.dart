@@ -13,9 +13,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  
   bool _showMenu;
   int _currentIndex;
   double _yPosition;
+
   @override 
   void initState(){
     super.initState();
