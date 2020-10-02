@@ -15,8 +15,7 @@ class MenuApp extends StatelessWidget {
       child: AnimatedOpacity(
         opacity: showMenu ? 1 : 0,
         duration: Duration(milliseconds: 500),
-        child: Container(
-          color: Colors.green,
+        child: Container(          
           height: altura * 0.7,
           child: Column(
             children: <Widget>[
@@ -94,7 +93,7 @@ class MenuApp extends StatelessWidget {
                           highlightElevation: 0,
                           hoverElevation: 0,
                           splashColor: Colors.purple[900],
-                          child: Text("Sair do APP",
+                          child: Text("SAIR DO APP",
                           style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                           ),
                           onPressed: (){},

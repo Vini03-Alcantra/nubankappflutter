@@ -8,8 +8,10 @@ class ItemMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var altura = MediaQuery.of(context).size.height;
+    var largura = MediaQuery.of(context).size.width;
     return Container(
-      height: 35,
+      height: altura * 0.05,
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(width: 0.7, color: Colors.white54),
@@ -31,11 +33,11 @@ class ItemMenu extends StatelessWidget {
             Row(
               children: <Widget>[
                 Icon(icon),
-                SizedBox(width: 15),
-                Text(texto, style: TextStyle(fontSize: 12))
+                SizedBox(width: largura * 0.013),
+                Text(texto, style: TextStyle(fontSize: 14))
               ],
             ),
-            Icon(Icons.chevron_right, size: 16)
+            Icon(Icons.chevron_right, size: 18)
           ],
         ),
         onPressed: (){},
