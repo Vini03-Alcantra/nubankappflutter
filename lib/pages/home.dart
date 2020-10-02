@@ -27,7 +27,10 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    double _screenHeight = MediaQuery.of(context).size.height;
+    var altura = MediaQuery.of(context).size.height;
+    var largura = MediaQuery.of(context).size.width;
+
+    double _screenHeight = altura;
     if (_yPosition == null) {
       _yPosition = _screenHeight * 0.24;
     }
@@ -69,24 +72,23 @@ class _HomePageState extends State<HomePage> {
               double midlePosition = positionBottonLimit - positionTopLimit;
               midlePosition = midlePosition / 2;
               setState(() {
+                //_yPosition = details.delta.dy;
                 _yPosition += details.delta.dy;
-                print("Botton ${positionBottonLimit.toString()}");
-                print("Top ${positionTopLimit.toString()}");
-                print("Position ${_yPosition.toString()}");
+
                 _yPosition = _yPosition < positionTopLimit ? positionTopLimit : _yPosition;
 
                 _yPosition = _yPosition > positionBottonLimit ? positionBottonLimit : _yPosition;
                 
-                print("midlePosition $midlePosition");
-                if (_yPosition != positionBottonLimit && details.delta.dy > 0) {                          
-                  _yPosition = _yPosition > positionTopLimit + midlePosition - 50
+                
+                if (_yPosition != positionBottonLimit && details.delta.dy > 0) {                                            
+                  _yPosition = _yPosition > positionTopLimit + midlePosition - (altura * 0.28)
                   ? positionBottonLimit 
                   : _yPosition;
                   
                 }
 
-                if (_yPosition != positionTopLimit && details.delta.dy < 0) {
-                  _yPosition = _yPosition < positionBottonLimit - midlePosition
+                if (_yPosition != positionTopLimit && details.delta.dy < 0) {                  
+                  _yPosition = _yPosition < positionBottonLimit - midlePosition + (altura * 0.28)
                   ? positionTopLimit 
                   : _yPosition;
                 }

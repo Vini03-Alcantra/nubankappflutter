@@ -14,7 +14,7 @@ class ItemMenuBottom extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 12),
       child: Container(
         child: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(altura * 0.01),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
