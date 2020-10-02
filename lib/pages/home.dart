@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           MenuApp(
-            top: _screenHeight * .20,
+            top: _screenHeight * 0.15,
             showMenu: _showMenu,
           ),
           BottomMenu(showMenu: _showMenu,),

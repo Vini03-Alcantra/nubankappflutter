@@ -7,20 +7,23 @@ class MenuApp extends StatelessWidget {
   const MenuApp({Key key, this.top, this.showMenu}) : super(key: key) ;
   @override
   Widget build(BuildContext context) {
+    var altura = MediaQuery.of(context).size.height;
     return Positioned(
       top: top,
       left: 0,
       right: 0,
       child: AnimatedOpacity(
         opacity: showMenu ? 1 : 0,
-        duration: Duration(milliseconds: 200),
+        duration: Duration(milliseconds: 500),
         child: Container(
-          height: MediaQuery.of(context).size.height * 0.7,
+          color: Colors.green,
+          height: altura * 0.7,
           child: Column(
             children: <Widget>[
-              Image.network("https://webmobtuts.com/wp-content/uploads/2019/02/QR_code_for_mobile_English_Wikipedia.svg_.png",
-              height: 100,
-              color: Colors.white
+              Image.network(
+                "https://webmobtuts.com/wp-content/uploads/2019/02/QR_code_for_mobile_English_Wikipedia.svg_.png",
+                height: altura * 0.13,
+                color: Colors.white
               ),
               Text.rich(
                 TextSpan(
@@ -32,9 +35,9 @@ class MenuApp extends StatelessWidget {
                     )
                   ]
                 ),
-                style: TextStyle(fontSize: 12),
+                style: TextStyle(fontSize: 13),
               ),
-              SizedBox(height: 5),
+              SizedBox(height: altura * 0.004),
               Text.rich(
                 TextSpan(
                   text: "Agência ",
@@ -45,9 +48,9 @@ class MenuApp extends StatelessWidget {
                     )
                   ]
                 ),
-                style: TextStyle(fontSize: 12),
+                style: TextStyle(fontSize: 13),
               ),
-              SizedBox(height: 5),
+              SizedBox(height: altura * 0.004),
               Text.rich(
                 TextSpan(
                   text: "Conta ",
@@ -58,9 +61,9 @@ class MenuApp extends StatelessWidget {
                     )
                   ]
                 ),
-                style: TextStyle(fontSize: 12),
+                style: TextStyle(fontSize: 13),
               ),
-              SizedBox(height: 25),
+              SizedBox(height: altura * 0.03),
               SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -72,9 +75,9 @@ class MenuApp extends StatelessWidget {
                       ItemMenu(Icons.credit_card, "Configurar Cartão"),
                       ItemMenu(Icons.store_mall_directory, "Pedir conta PJ"),
                       ItemMenu(Icons.phone_android, "Configurações no APP"),
-                      SizedBox(height: 25),
+                      SizedBox(height: altura * 0.03),
                       Container(
-                        height: 35,
+                        height: altura * 0.05,
                         width: double.infinity,
                         decoration: BoxDecoration(
                           border: Border.all(
@@ -92,7 +95,7 @@ class MenuApp extends StatelessWidget {
                           hoverElevation: 0,
                           splashColor: Colors.purple[900],
                           child: Text("Sair do APP",
-                          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                           ),
                           onPressed: (){},
 
