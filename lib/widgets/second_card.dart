@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:nubankappflutter/widgets/item_bar_page_view.dart';
 
 class SecondCard extends StatefulWidget {
   @override
@@ -13,6 +14,7 @@ class _SecondCardState extends State<SecondCard> with AutomaticKeepAliveClientMi
   Widget build(BuildContext context) {
     var altura = MediaQuery.of(context).size.height;
     var largura = MediaQuery.of(context).size.width;
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(5),
       child: Column(
@@ -34,7 +36,7 @@ class _SecondCardState extends State<SecondCard> with AutomaticKeepAliveClientMi
                             child: Column(
                               children: <Widget>[
                                 Padding(
-                                  padding: const EdgeInsets.all(20),
+                                  padding: EdgeInsets.only(left: largura * 0.05, top: altura * 0.02, bottom: altura * 0.02, right: largura * 0.05),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
@@ -42,14 +44,15 @@ class _SecondCardState extends State<SecondCard> with AutomaticKeepAliveClientMi
                                       children: <Widget>[
                                         Icon(
                                           Icons.credit_card,
-                                          color: Colors.grey
+                                          color: Colors.black45,
+                                          size: 30,
                                         ),
                                         SizedBox(width: 5),
                                         Text(
                                           "Conta", 
                                           style: TextStyle(
-                                            color: Colors.grey,
-                                            fontSize: 13
+                                            color: Colors.black54,
+                                            fontSize: 20
                                           ),
                                         ), 
                                       ],
@@ -63,25 +66,27 @@ class _SecondCardState extends State<SecondCard> with AutomaticKeepAliveClientMi
                                       child: _showSaldo ?
                                       Icon(                                        
                                         MaterialCommunityIcons.eye_outline,
-                                        color: Colors.grey
+                                        color: Colors.black45,
+                                        size: 30,
                                       ) :
                                       Icon(                                        
                                         MaterialCommunityIcons.eye_off,
-                                        color: Colors.grey
+                                        color: Colors.black45,
+                                        size: 30,
                                       )  
                                     )
                                     ],
                                   ),
                                 ),                                    
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 20, top: 20, bottom: 20),
+                                  padding: EdgeInsets.only(left: largura * 0.05, top: altura * 0.02, bottom: altura * 0.02),
                                   child: SizedBox(
                                     width: double.infinity,
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: <Widget>[
                                         Text("Saldo Disponível", textAlign: TextAlign.start, 
-                                        style: TextStyle(color: Colors.grey, fontSize: 13),
+                                        style: TextStyle(color: Colors.black54, fontSize: 18),
                                         ),
                                         _showSaldo ?
                                         Text.rich(
@@ -91,7 +96,7 @@ class _SecondCardState extends State<SecondCard> with AutomaticKeepAliveClientMi
                                           textAlign: TextAlign.start,
                                           style: TextStyle(
                                             color: Colors.black,
-                                            fontSize: 28,                                                    
+                                            fontSize: 32,                                                    
                                           ),
                                         ) :
                                         Container(
@@ -116,35 +121,7 @@ class _SecondCardState extends State<SecondCard> with AutomaticKeepAliveClientMi
               ),
             ),
           ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Icon(  
-                      Icons.add_shopping_cart,
-                      color: Colors.grey
-                    ),
-                    SizedBox(width: 5),
-                    Flexible(
-                      child: Text("Compra mais recente no supermercado R\$34.56 quinta feir", 
-                      style: TextStyle(color: Colors.black, fontSize: 13),
-                      )
-                    ),
-                    Icon(
-                      Icons.chevron_right,
-                      color: Colors.grey[400],
-                      size: 18,
-                    )
-                  ],
-                ),
-              ),
-              color: Colors.grey[200],
-            ),
-          )
+          ItemBarPageView()
         ],
       ),
     );
